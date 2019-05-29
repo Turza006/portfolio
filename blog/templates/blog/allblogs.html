@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -8,7 +9,7 @@
     <meta name="generator" content="Jekyll v3.8.5">
     <title>shadow world</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -36,21 +37,23 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Shadow World</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Shadow World</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Facebook </a>
+             <li class="nav-item">
+                    <a class="nav-link" href="http://facebook.com/probal.roz">Facebook </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Resume</a>
+                    <a class="nav-link" href="{% static 'pdf.pdf' %}">Resume</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Blog</a>
+                    <a class="nav-link active " href="{% url 'allblogs' %}">Blog</a>
+
+                </li>
 
                 </li>
             </ul>
@@ -66,12 +69,12 @@
         <br/>
         <h2>Latest Post</h2><hr/>
         {% for blog in blogs.all %}
-            <a href=""><h3> {{ blog.title }}</h3></a>
-            {{ blog.pub_date }}
+            <a href="{% url 'detail' blog.id %}"><h3> {{ blog.title }}</h3></a>
+            {{ blog.pub_date_pretty }}
             <br/>
             <img class="img-fluid" src="{{ blog.image.url }}"  height=300 width=400/>
             <br/>
-            <p>{{ blog.body }}</p>
+            <p>{{ blog.summary }}</p>
 
 
 
