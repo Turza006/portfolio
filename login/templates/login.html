@@ -1,13 +1,14 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-    {% load staticfiles %}
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>{{ blog.title }}</title>
+    <title>shadow world</title>
 
 
 
@@ -34,8 +35,10 @@
     <!-- Custom styles for this template -->
 
 </head>
-<body>
-<header>
+  <body class="text-center">
+
+
+  <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="{% url 'home' %}">Shadow World</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -44,7 +47,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-             <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="http://facebook.com/probal.roz">Facebook </a>
                 </li>
                 <li class="nav-item">
@@ -57,40 +60,33 @@
                     <a class="nav-link active " href="{% url 'allblogs' %}">Blog</a>
 
                 </li>
-
-
-
             </ul>
         </div>
     </nav>
 </header>
-
-<main role="main">
-    <div class="container">
-
-
-
-           <h1 class="text-center pt-3">{{ blog.title }}</h1><hr/>
-            <img class="img-fluid" src="{{ blog.image.url }}"/>
-            <br/>
-            <br/>
-
-            {{ blog.pub_date_pretty }}
-            <br/>
-            <br/>
-
-            <h4>{{ blog.summary }}</h4>
+<br/>
+  <br/>
+  <br/>
+  <br/>
 
 
-
-        <div/>
-
-</main>
-
-<footer class="text-muted">
-    <div class="container text-right">
-        <p>© Probal Datta Turza {% now "Y" %}</p>
-    </div>
-</footer>
-
+    <form class="form-signin">
+  <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+</form>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>
