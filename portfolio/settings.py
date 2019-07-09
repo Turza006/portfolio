@@ -25,6 +25,7 @@ SECRET_KEY = 'mq_*x1+!#ifad&^@$)op_*=8dm5qft&qo4g7zqno@x^3_n7tay'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = []
 
 
