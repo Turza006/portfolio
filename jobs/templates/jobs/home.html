@@ -1,98 +1,13 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    {% load staticfiles %}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.5">
-    <title>shadow world</title>
-
-
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-        img.card-img-top{
-            height: 300px !important;
-        }
-    </style>
-    <!-- Custom styles for this template -->
-
-</head>
-<body>
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'home' %}">
-        <img height = "40" weidth = "40" src="{% static 'logo.png' %}" class = "d-inline-block alighn-top"/>
-            Shadow World</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="http://facebook.com/probal.roz">Facebook </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.instagram.com/probalturza">Instagram </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% static 'pdf.pdf' %}">Resume</a>
-                </li>
-
-                <li>
-                    {% if user.is_authenticated %}
-
-                    <li class="nav-item">
-                    <a class="nav-link " href="{% url 'allblogs' %}">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
-                    <form id="logout" method="POST" action="{% url 'logout' %}">
-                    {% csrf_token %}
-                    <input type="hidden" />
-                    </form>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                    <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
-                    </li>
- 1                  <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Login</a>
-                    </li>
-                    {% endif %}
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
 
 <main role="main">
 
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1 class="jumbotron-heading">Hi, I am Turza.</h1>
-            <p class="lead text-muted">I am a current student of Metropolitan University. I like to take picture. I like to riding bike and travaling.And its my personal blog. Welcome to my blog.</p>
+    <section class="jumbotron text-center" style="background-color: transparent">
+        <div class="container" >
+            <h1 class="jumbotron-heading" >Hi, I am Turza.</h1>
+            <p class="lead text-muted-dark" style="font-family: 'Comic Sans MS'">I am a current student of Metropolitan University. I like to take picture. I like to riding bike and travaling.And its my personal blog. Welcome to my blog.</p>
             <p>
                 <a href="mailto:probaldattaturza@gmail.com" class="btn btn-primary my-2">Email me</a>
 
@@ -101,14 +16,14 @@
         </div>
     </section>
 
-    <div class="album py-5 bg-light">
+    <div class="album py-5" style="background-color: transparent">
         <div class="container">
 
             <div class="row">
                 {% for job in jobs.all %}
                 <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img class="card-img-top" src="{{ job.image.url }}"/>
+                    <div class="card mb-4 shadow" style="background-color: transparent">
+                        <img class="card-img-top" src="{{ job.image.url }}" style="padding: 5px"/>
 
                         <div class="card-body">
                             <p class="card-text">{{  job.summary }}</p>
@@ -127,12 +42,4 @@
 
 </main>
 
-<footer class="text-muted">
-    <div class="container text-right">
-        <p>© Probal Datta Turza {% now "Y" %}</p>
-    </div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</html>
+{% endblock %}

@@ -1,71 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    {% load staticfiles %}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.5">
-    <title>{{ blog.title }}</title>
-
-
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
-    <!-- Custom styles for this template -->
-
-</head>
-<body>
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'home' %}">
-        <img height = "40" weidth = "40" src="{% static 'logo.png' %}" class = "d-inline-block alighn-top"/>
-            Shadow World</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-             <li class="nav-item">
-                    <a class="nav-link" href="http://facebook.com/probal.roz">Facebook </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.instagram.com/probalturza">Instagram </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% static 'pdf.pdf' %}">Resume</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active " href="{% url 'allblogs' %}">Blog</a>
-
-                </li>
-
-
-
-            </ul>
-        </div>
-    </nav>
-</header>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
 
 <main role="main">
     <div class="container">
@@ -89,10 +24,4 @@
 
 </main>
 
-<footer class="text-muted">
-    <div class="container text-right">
-        <p>© Probal Datta Turza {% now "Y" %}</p>
-    </div>
-</footer>
-
-</html>
+{% endblock %}

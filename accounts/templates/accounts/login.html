@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     {% load staticfiles %}
     <meta charset="utf-8">
@@ -7,13 +8,20 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>{{ blog.title }}</title>
+    <title>shadow world</title>
+
+
+    <link rel = "icon" href="{% static 'logo.png' %}" type = "image/png"/>
 
 
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+
+
 
     <style>
         .bd-placeholder-img {
@@ -30,16 +38,19 @@
                 font-size: 3.5rem;
             }
         }
+        img.card-img-top{
+            height: 300px !important;
+        }
     </style>
     <!-- Custom styles for this template -->
 
 </head>
-
+<body  style="background-image: linear-gradient(45deg, #53a0fd 50%, white 50% )">
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="">
-            <img height = "40" weidth = "40" src="{% static 'logo.png' %}" class = "d-inline-block alighn-top"/>
-            Shadow World</a>
+    <nav class="navbar navbar-expand " style="background-color: transparent" >
+        <a class="navbar-brand" href="{% url 'home' %}" style="color: black">
+        <img height = "60" weidth = "60" src="{% static 'logo.png' %}" class = "d-inline-block alighn-top" />
+            <p6>Shadow World </p6></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -64,10 +75,10 @@
     </nav>
 </header>
 
-<body>
+
 <div >
 
-    <section class="jumbotron text-center">
+    <section class="jumbotron text-center" style="background-color: transparent">
         <div class="container">
             {% if error %}
                 {{ error }}
@@ -96,7 +107,7 @@
 
         </div>
 
-
+    </section>
 
 <footer class="text-muted">
     <div class="container text-right">
